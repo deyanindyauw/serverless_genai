@@ -1,0 +1,68 @@
+---------------------------------------------------------------------
+Node js
+---------------------------------------------------------------------
+//same first line change
+export const handler = async (event) => {
+    const n = event.n || 1000; // Default to 10 if 'n' is not provided
+    
+    function* fibonacciGenerator(n) {
+        let a = 0, b = 1;
+        for (let i = 0; i < n; i++) {
+            yield a;
+            [a, b] = [b, a + b];
+        }
+    }
+    
+    const fibonacciNumbers = Array.from(fibonacciGenerator(n));
+    
+    const response = {
+        statusCode: 200,
+        body: JSON.stringify(fibonacciNumbers),
+    };
+    return response;
+};
+
+---------------------------------------------------------------------
+Python
+---------------------------------------------------------------------
+import json
+
+def fibonacci_generator(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+
+def lambda_handler(event, context):
+    n = event.get('n', 1000)  # Default to 10 if 'n' is not provided
+    fibonacci_numbers = list(fibonacci_generator(n))
+    return {
+        'statusCode': 200,
+        'body': json.dumps(fibonacci_numbers)
+    }
+
+---------------------------------------------------------------------
+Ruby
+---------------------------------------------------------------------
+require 'json'
+
+def fibonacci_generator(n)
+  Enumerator.new do |yielder|
+    a, b = 0, 1
+    n.times do
+      yielder.yield a
+      a, b = b, a + b
+    end
+  end
+end
+
+def lambda_handler(event:, context:)
+  n = event['n'] || 1000 # Default to 10 if 'n' is not provided
+  fibonacci_numbers = fibonacci_generator(n).to_a
+  {
+    statusCode: 200,
+    body: JSON.generate(fibonacci_numbers)
+  }
+end
+
+---------------------------------------------------------------------

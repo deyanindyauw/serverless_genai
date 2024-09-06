@@ -1,0 +1,42 @@
+Node - 1 million prime numbers : ran oom
+//line had to be updated to suit formatting
+export const handler = async (event) => {
+
+
+Test Event Name
+test01
+
+Response
+{
+  "errorType": "Runtime.OutOfMemory",
+  "errorMessage": "RequestId: a49a4176-c9b7-4d20-ba01-e90f16fb6dc9 Error: Runtime exited with error: signal: killed"
+}
+
+Function Logs
+START RequestId: a49a4176-c9b7-4d20-ba01-e90f16fb6dc9 Version: $LATEST
+END RequestId: a49a4176-c9b7-4d20-ba01-e90f16fb6dc9
+REPORT RequestId: a49a4176-c9b7-4d20-ba01-e90f16fb6dc9	Duration: 2823.16 ms	Billed Duration: 2824 ms	Memory Size: 128 MB	Max Memory Used: 125 MB	Status: error	Error Type: Runtime.OutOfMemory
+
+Request ID
+a49a4176-c9b7-4d20-ba01-e90f16fb6dc9
+
+------------------------------------------------
+
+Python 100,000 prime numbers, task timed out
+
+Test Event Name
+test01
+
+Response
+{
+  "errorType": "Sandbox.Timedout",
+  "errorMessage": "RequestId: 5a755148-2903-4513-8cee-04970673dffe Error: Task timed out after 3.00 seconds"
+}
+
+Function Logs
+START RequestId: 5a755148-2903-4513-8cee-04970673dffe Version: $LATEST
+END RequestId: 5a755148-2903-4513-8cee-04970673dffe
+REPORT RequestId: 5a755148-2903-4513-8cee-04970673dffe	Duration: 3000.00 ms	Billed Duration: 3000 ms	Memory Size: 128 MB	Max Memory Used: 41 MB	Status: timeout
+
+Request ID
+5a755148-2903-4513-8cee-04970673dffe

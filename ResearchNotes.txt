@@ -1,0 +1,13 @@
+Using ChatGPT 3.5, do the following :
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+One single complete run comprises of the following steps :
+
+1. Purge cloudwatch logs (manual)
+2. Execute a batch script that calls the serverless function 100 times
+3. Review the cloudwatch logs and download as csv
+4. Execute a script to parse logs from step #3 and create a new csv only with metrics
+5. Compute statistics on the #4 and generate relevant plots
+
+---------------------------------------------------------------------------------------------------------------------------------------
