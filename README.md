@@ -1,0 +1,1 @@
+This repo contains code captured by prompting GenAI tools for creating serverless functions on AWS Lambda and testing them for correctness and other modifications made to correct them. We also capture some performance metrics and generate plots to present the same.
